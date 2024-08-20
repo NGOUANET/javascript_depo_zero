@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position de la souris</title>
+    <style>
+        #position {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 5px;
+            background-color: lightgrey;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="position">X: 0, Y: 0</div>
+
+<script>
+    // Sélectionner l'élément où les coordonnées seront affichées
+    const positionDiv = document.getElementById('position');
+
+    // Ajouter un écouteur d'événement pour le déplacement de la souris
+    document.addEventListener('mousemove', function(event) {
+        // Récupérer les coordonnées de la souris
+        const x = event.clientX;
+        const y = event.clientY;
+
+        // Mettre à jour le contenu de l'élément avec les coordonnées
+        positionDiv.textContent = `X: ${x}, Y: ${y}`;
+    });
+</script>
+
+</body>
+</html>

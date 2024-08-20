@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contenu"></div>
+    <button id="but">ceci est mon bouton</button>
+    
+    <script>
+        var divcontenu = document.getElementById('contenu');
+        var button = document.getElementById('but');
+
+        button.addEventListener('click', function changercontenu() {
+            divcontenu.innerHTML = '<h2>Nouveau titre</h2><p>Nouveau contenu avec des balises <em>HTML</em>.</p>';
+        });
+    </script>
+</body>
+</html>

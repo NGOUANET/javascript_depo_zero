@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteur avec JavaScript</title>
+    <style>
+        #compteur {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 16px;
+            margin-right: 10px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="compteur">Compteur : 0</div>
+<button id="incrementer">Incrémenter</button>
+<button id="reinitialiser">Réinitialiser</button>
+
+<script>
+    // Initialiser le compteur
+    let compteur = 0;
+
+    // Sélectionner les éléments du DOM
+    const compteurDiv = document.getElementById('compteur');
+    const incrementerBtn = document.getElementById('incrementer');
+    const reinitialiserBtn = document.getElementById('reinitialiser');
+
+    // Fonction pour mettre à jour l'affichage du compteur
+    function mettreAJourCompteur() {
+        compteurDiv.textContent = `Compteur : ${compteur}`;
+    }
+
+    // Ajouter un écouteur d'événement pour le bouton d'incrémentation
+    incrementerBtn.addEventListener('click', () => {
+        compteur++;
+        mettreAJourCompteur();
+    });
+
+    // Ajouter un écouteur d'événement pour le bouton de réinitialisation
+    reinitialiserBtn.addEventListener('click', () => {
+        compteur = 0;
+        mettreAJourCompteur();
+    });
+
+    // Mettre à jour l'affichage initial du compteur
+    // mettreAJourCompteur();
+</script>
+
+</body>
+</html>
